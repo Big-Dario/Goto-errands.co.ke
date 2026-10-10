@@ -1,0 +1,32 @@
+# Render Blueprint: dashboard > New > Blueprint > choose this repo.
+# SQLite needs a persistent disk, otherwise accounts and orders are wiped on every restart or deploy.
+services:
+  - type: web
+    name: swiftrun-api
+    runtime: python
+    rootDir: backend
+    plan: starter            # persistent disks are not available on the free plan
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 1 --threads 4 -b 0.0.0.0:$PORT app:app
+    healthCheckPath: /api/health
+    disk:
+      name: swiftrun-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATABASE
+        value: /var/data/swiftrun.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MPESA_CALLBACK_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: MPESA_MODE
+        value: mock
+      - key: ALLOWED_ORIGINS
+        value: https://big-dario.github.io
+      - key: ADMIN_EMAIL
+        sync: false          # you will be asked for this
+      - key: ADMIN_PASSWORD
+        sync: false          # and this (choose a long one)

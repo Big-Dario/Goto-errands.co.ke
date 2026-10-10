@@ -1,0 +1,252 @@
+{
+ "categories": [
+  {
+   "id": "delivery",
+   "icon": "📦",
+   "name": "Delivery & Courier",
+   "blurb": "Send parcels, documents and gifts across the city"
+  },
+  {
+   "id": "shopping",
+   "icon": "🛒",
+   "name": "Shopping",
+   "blurb": "Groceries, market produce and household items"
+  },
+  {
+   "id": "food",
+   "icon": "🍔",
+   "name": "Food & Drinks",
+   "blurb": "Takeaway, bakery and restaurant pickups"
+  },
+  {
+   "id": "health",
+   "icon": "💊",
+   "name": "Pharmacy & Health",
+   "blurb": "Prescriptions, medicine and lab results"
+  },
+  {
+   "id": "paperwork",
+   "icon": "📝",
+   "name": "Queues & Paperwork",
+   "blurb": "We queue, pay and submit so you don’t have to"
+  },
+  {
+   "id": "pickups",
+   "icon": "🔄",
+   "name": "Pickups & Returns",
+   "blurb": "Collect packages and return online orders"
+  },
+  {
+   "id": "home",
+   "icon": "🏠",
+   "name": "Home Services",
+   "blurb": "Laundry, gas refills and repairs drop-off"
+  },
+  {
+   "id": "other",
+   "icon": "✨",
+   "name": "Something Else",
+   "blurb": "Describe any errand and we’ll sort it"
+  }
+ ],
+ "services": [
+  {
+   "id": "parcel",
+   "cat": "delivery",
+   "icon": "📦",
+   "name": "Parcel delivery",
+   "type": "delivery",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Deliver a parcel from CBD to Westlands"
+  },
+  {
+   "id": "docs",
+   "cat": "delivery",
+   "icon": "📄",
+   "name": "Document delivery",
+   "type": "delivery",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Signed contract to Upper Hill office"
+  },
+  {
+   "id": "gift",
+   "cat": "delivery",
+   "icon": "🎁",
+   "name": "Gifts & flowers",
+   "type": "delivery",
+   "eta": "2–3 hrs",
+   "ex": "e.g. Deliver a bouquet to Karen by 5pm"
+  },
+  {
+   "id": "grocery",
+   "cat": "shopping",
+   "icon": "🛒",
+   "name": "Supermarket groceries",
+   "type": "grocery",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Carrefour: 2kg unga, 1L milk, bread"
+  },
+  {
+   "id": "market",
+   "cat": "shopping",
+   "icon": "🥬",
+   "name": "Fresh market produce",
+   "type": "grocery",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Gikomba market: tomatoes, onions, sukuma"
+  },
+  {
+   "id": "house",
+   "cat": "shopping",
+   "icon": "🧴",
+   "name": "Household & hardware",
+   "type": "errand",
+   "eta": "1–3 hrs",
+   "ex": "e.g. Buy a padlock and 2 light bulbs"
+  },
+  {
+   "id": "anything",
+   "cat": "shopping",
+   "icon": "🛍️",
+   "name": "Buy anything for me",
+   "type": "errand",
+   "eta": "1–3 hrs",
+   "ex": "e.g. Buy a phone charger from Luthuli Avenue"
+  },
+  {
+   "id": "takeaway",
+   "cat": "food",
+   "icon": "🍽️",
+   "name": "Restaurant takeaway",
+   "type": "pickup",
+   "eta": "45–90 min",
+   "ex": "e.g. Pick up my order at Java, Yaya Centre"
+  },
+  {
+   "id": "bakery",
+   "cat": "food",
+   "icon": "🎂",
+   "name": "Cake & bakery pickup",
+   "type": "pickup",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Collect birthday cake, order #123"
+  },
+  {
+   "id": "rx",
+   "cat": "health",
+   "icon": "💊",
+   "name": "Prescription pickup",
+   "type": "pharmacy",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Collect prescription from Goodlife Pharmacy"
+  },
+  {
+   "id": "otc",
+   "cat": "health",
+   "icon": "🩹",
+   "name": "Over-the-counter medicine",
+   "type": "pharmacy",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Buy paracetamol and cough syrup"
+  },
+  {
+   "id": "lab",
+   "cat": "health",
+   "icon": "🧪",
+   "name": "Lab results collection",
+   "type": "pickup",
+   "eta": "1–3 hrs",
+   "ex": "e.g. Collect results from Lancet, Kilimani"
+  },
+  {
+   "id": "queue",
+   "cat": "paperwork",
+   "icon": "🕒",
+   "name": "Queue for me",
+   "type": "errand",
+   "eta": "2–5 hrs",
+   "ex": "e.g. Queue at Huduma Centre for ID replacement"
+  },
+  {
+   "id": "bills",
+   "cat": "paperwork",
+   "icon": "🧾",
+   "name": "Pay bills",
+   "type": "errand",
+   "eta": "1–3 hrs",
+   "ex": "e.g. Pay KPLC tokens, meter no. ..."
+  },
+  {
+   "id": "submit",
+   "cat": "paperwork",
+   "icon": "🏛️",
+   "name": "Submit or collect documents",
+   "type": "errand",
+   "eta": "2–5 hrs",
+   "ex": "e.g. Submit forms at the KRA office"
+  },
+  {
+   "id": "bank",
+   "cat": "paperwork",
+   "icon": "🏦",
+   "name": "Bank run",
+   "type": "errand",
+   "eta": "2–4 hrs",
+   "ex": "e.g. Deposit a cheque at Equity, Moi Avenue"
+  },
+  {
+   "id": "collect",
+   "cat": "pickups",
+   "icon": "📬",
+   "name": "Collect a package",
+   "type": "pickup",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Collect parcel from G4S courier office"
+  },
+  {
+   "id": "returns",
+   "cat": "pickups",
+   "icon": "↩️",
+   "name": "Online order returns",
+   "type": "pickup",
+   "eta": "1–3 hrs",
+   "ex": "e.g. Return a jacket to the Jumia pickup point"
+  },
+  {
+   "id": "laundry",
+   "cat": "home",
+   "icon": "👕",
+   "name": "Laundry pickup & drop-off",
+   "type": "pickup",
+   "eta": "2–4 hrs",
+   "ex": "e.g. Take clothes to the dry cleaner in Kilimani"
+  },
+  {
+   "id": "gas",
+   "cat": "home",
+   "icon": "🔥",
+   "name": "Gas (LPG) refill",
+   "type": "errand",
+   "eta": "1–2 hrs",
+   "ex": "e.g. Refill a 13kg cylinder and bring it home"
+  },
+  {
+   "id": "repairs",
+   "cat": "home",
+   "icon": "🧵",
+   "name": "Tailor & repairs drop-off",
+   "type": "pickup",
+   "eta": "2–4 hrs",
+   "ex": "e.g. Drop shoes at the cobbler, collect Friday"
+  },
+  {
+   "id": "custom",
+   "cat": "other",
+   "icon": "✨",
+   "name": "Something else",
+   "type": "errand",
+   "eta": "varies",
+   "ex": "Describe what you need and where"
+  }
+ ]
+}
