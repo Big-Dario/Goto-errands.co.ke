@@ -1,0 +1,112 @@
+/* SwiftRun - device compatibility and smooth scrolling (drop-in, loads AFTER your inline <style>) */
+:root{--nav-h:calc(68px + env(safe-area-inset-top,0px));color-scheme:dark}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scrollbar-gutter:stable}
+html.no-scroll,html.no-scroll body{overflow:hidden}
+body{overflow-x:clip;-webkit-tap-highlight-color:transparent}
+img,svg,video{max-width:100%}
+button,a,select,.nav-a,.pay-card,.order-card,.adm-link,.user-pill,.svc-card,.svc-chip,.svc-cat-card{touch-action:manipulation}
+.ocd-val,.od-field-val,.od-route-text,.rider-name,.order-id{overflow-wrap:anywhere}
+
+/* ---- viewport units that survive mobile browser toolbars; safe areas for notches ---- */
+.navbar{height:var(--nav-h);padding-top:env(safe-area-inset-top,0px)}
+.nav-inner{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+.page{padding-top:var(--nav-h);min-height:100vh;min-height:100dvh}
+.page-wrap{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+.hero{min-height:calc(100vh - 68px);min-height:calc(100dvh - var(--nav-h))}
+.auth-wrap{min-height:100vh;min-height:100dvh}
+.admin-layout{min-height:calc(100vh - 68px);min-height:calc(100dvh - var(--nav-h))}
+.admin-sidebar{top:var(--nav-h);height:calc(100vh - 68px);height:calc(100dvh - var(--nav-h));overscroll-behavior:contain}
+.modal-box{max-height:90vh;max-height:90dvh;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.page-head h1{font-size:clamp(1.6rem,6vw,2.2rem)}
+
+/* ---- scroll performance ---- */
+.order-card{content-visibility:auto;contain-intrinsic-size:auto 170px;transition:border-color .2s,transform .2s}
+.how-section{content-visibility:auto;contain-intrinsic-size:auto 420px}
+.hero-card{will-change:transform}
+.hero-card-stack.paused .hero-card{animation-play-state:paused}
+.adm-table-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
+.adm-table-wrap table{min-width:760px}
+#adm-orders .adm-table-wrap table{min-width:1000px}
+.wa-messages,.user-dropdown,.nav-links{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.order-card-header{flex-wrap:wrap;gap:8px}
+
+/* ---- floating elements: keep clear of notches and each other ---- */
+.wa-fab{bottom:calc(20px + env(safe-area-inset-bottom,0px));right:calc(20px + env(safe-area-inset-right,0px))}
+.wa-window{bottom:calc(92px + env(safe-area-inset-bottom,0px));right:calc(20px + env(safe-area-inset-right,0px));width:min(360px,calc(100vw - 24px));height:min(520px,calc(100vh - 130px));height:min(520px,calc(100dvh - 130px))}
+.toast{left:50%;right:auto;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);max-width:min(340px,calc(100vw - 32px));text-align:center}
+.toast.show{transform:translate(-50%,0)}
+
+/* ---- tablets and small laptops: switch to the menu button earlier ---- */
+@media (max-width:860px){
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--dark2);flex-direction:column;padding:12px;border-bottom:1px solid var(--border);z-index:800;max-height:calc(100vh - 68px);max-height:calc(100dvh - var(--nav-h));overflow-y:auto}
+  .nav-links.open{display:flex}
+  .hamburger{display:flex;width:44px;height:44px;align-items:center;justify-content:center}
+  .nav-a{padding:13px 14px}
+  .navbar,.modal-overlay,.wa-window{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .navbar{background:rgba(13,17,23,.99)}
+}
+
+/* ---- admin on tablets and phones ---- */
+@media (max-width:900px){
+  .admin-sidebar{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-right:0;border-bottom:1px solid var(--border)}
+  .admin-logo{margin:0}
+  .admin-nav{flex-direction:row;overflow-x:auto;width:100%;order:3;flex:none;gap:6px;-webkit-overflow-scrolling:touch}
+  .adm-link{white-space:nowrap}
+  .adm-exit{margin:0 0 0 auto}
+  .admin-main{padding:20px 14px}
+  .adm-head{flex-wrap:wrap;gap:8px}
+}
+
+/* ---- phones ---- */
+@media (max-width:560px){
+  .nav-inner{gap:12px}
+  .page-wrap{padding-top:28px;padding-bottom:60px}
+  .request-form-card{padding:18px 16px}
+  .hero{padding:32px 20px}
+  .hero-btns .btn-primary,.hero-btns .btn-outline{flex:1 1 160px}
+  .track-search{flex-wrap:wrap}
+  .track-search .btn-primary{flex:1 1 100%}
+  .pay-methods{gap:6px}
+  .pay-card{padding:10px 4px}
+  .pay-card span{font-size:.76rem}
+  .auth-card{padding:26px 18px}
+  .modal-overlay{align-items:flex-end;padding:0}
+  .modal-box{max-width:100%;border-radius:16px 16px 0 0;max-height:92vh;max-height:92dvh}
+  .modal-pay{padding:28px 20px calc(28px + env(safe-area-inset-bottom,0px))}
+  .modal-actions{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .wa-window{left:0;right:0;bottom:0;width:100%;height:min(80vh,640px);height:min(80dvh,640px);border-radius:16px 16px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  body.wa-open .wa-fab{display:none}
+  .toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
+
+/* ---- touch screens: bigger targets, no iOS focus-zoom, no sticky hover ---- */
+@media (pointer:coarse){
+  .btn-primary,.btn-outline,.btn-calculate,.btn-confirm-pay,.btn-full,.btn-pay-now,.btn-cancel-ord,.btn-rebook,.btn-wa-modal,.adm-link,.user-dropdown a,.svc-chip{min-height:44px}
+  .adm-btn{min-height:38px;padding:8px 12px}
+  .modal-close{width:40px;height:40px}
+  .wa-qr-btn{padding:9px 14px}
+  .field,.wa-input,select.field,textarea.field{font-size:16px}
+}
+@media (hover:none){
+  .order-card:hover,.btn-primary:hover,.svc-cat-card:hover{transform:none}
+}
+
+/* ---- landscape phones and very large screens ---- */
+@media (max-height:480px) and (orientation:landscape){
+  .hero{min-height:auto;padding:24px}
+  .wa-window{height:calc(100vh - 100px);height:calc(100dvh - 100px)}
+}
+@media (min-width:1600px){html{font-size:17px}.page-wrap{max-width:1240px}}
+@media (min-width:2200px){html{font-size:19px}}
+
+/* ---- low-power devices, data saver and "reduce motion" ---- */
+html.lite .navbar,html.lite .modal-overlay{-webkit-backdrop-filter:none;backdrop-filter:none}
+html.lite *,html.lite *::before,html.lite *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+html.lite .pay-spinner{animation:spin 1s linear infinite!important}
+html.lite .wa-typing span{animation:waDot 1.2s infinite!important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .pay-spinner{animation:spin 1.6s linear infinite!important}
+  .wa-typing span{animation:waDot 1.2s infinite!important}
+}
