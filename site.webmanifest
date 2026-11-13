@@ -1,7 +1,7 @@
 {
   "name": "SwiftRun — Errands & Deliveries",
   "short_name": "SwiftRun",
-  "description": "Errands and deliveries across Nairobi: groceries, parcels, pharmacy pickups and more. See the price upfront, pay with M-Pesa or cash, and track your order.",
+  "description": "Errands and deliveries across Kitui : groceries, parcels, pharmacy pickups and more. See the price upfront, pay with M-Pesa or cash, and track your order.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
